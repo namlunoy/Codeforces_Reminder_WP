@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)https://msdn.microsoft.com/en-us/library/hh674188.aspx -->
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="WT.seg_1" content="en-us"><link rel="canonical" href="./Parsing REST Services JSON Responses (C#)_files/Parsing REST Services JSON Responses (C#).html">
+        <title>Parsing REST Services JSON Responses (C#)</title>
+
+
+
+
+
+<meta name="DCS.dcsuri" content="/en-us/library/hh674188(d=default,l=en-us,v=msdn.10).aspx">
+
+<meta name="NormalizedUrl" content="https://msdn.microsoft.com/en-us/library/hh674188(d=default,l=en-us,v=msdn.10).aspx">
+
+<meta name="ms.normalizedurl" content="https://msdn.microsoft.com/en-us/library/hh674188(d=default,l=en-us,v=msdn.10).aspx">
+
+<meta name="VotingContextUrl" content="https://msdn.microsoft.com/en-us/library/hh674188(d=default,l=en-us,v=msdn.10).aspx">
+
+<meta name="MN" content="BF1CA938-5:04:55 PM">
+
+<meta name="Search.ShortId" content="hh674188">
+
+<meta name="ms.shortidmsdn" content="hh674188">
+
+<meta name="Ms.Locale" content="en-us">
+
+<meta name="ms.prodver" content="MSDN.10">
+
+<meta name="ms.contentlang" content="EN">
+
+<meta name="ms.lang" content="EN">
+
+<meta name="ms.loc" content="US">
+
+<meta name="ms.sitever" content="2015.02.26.3">
+
+<meta name="ms.assetid" content="bea3733c-6ffe-4742-9998-744892926715">
+
+<meta name="ms.auth" content="0">
+
+
+
+
+
+
+
+
+        
+    <link rel="stylesheet" type="text/css" href="./Parsing REST Services JSON Responses (C#)_files/Combined.css"><script type="text/javascript" async="" src="./Parsing REST Services JSON Responses (C#)_files/ms.js"></script><script type="text/javascript" src="./Parsing REST Services JSON Responses (C#)_files/ai.js" async=""></script><script class="mtps-injected">try {
+/**/
+(window.MTPS || (window.MTPS = {})).cdnDomains || (window.MTPS.cdnDomains = { 
+	"image": "https://i-msdn.sec.s-msft.com", 
+	"js": "https://i2-msdn.sec.s-msft.com", 
+	"css": "https://i-msdn.sec.s-msft.com", 
+	"xap": "https://i-vso.sec.s-msft.com"
+});
+/**/
+} finally { MTPS._injectNextScript_0 && MTPS._injectNextScript_0(); }</script><script class="mtps-injected" src="./Parsing REST Services JSON Responses (C#)_files/jquery-1.8.2.min.js"></script><script class="mtps-injected">try {
+//
+  var literalNormalizedUrl = '/en-us/library/hh674188(l=en-us,v=msdn.10).aspx';
+  var wt_nvr_ru = 'WT_NVR_RU';
+  var wt_fpcdom = '.microsoft.com';
+  var wt_domlist = 'msdn.microsoft.com';
+  var wt_pathlist = '';
+  var wt_paramlist = 'DCSext.mtps_devcenter';
+  var wt_siteid = 'MSDN';
+  var gDomain = 'm.webtrends.com';
+  var gDcsId = 'dcsmgru7m99k7mqmgrhudo0k8_8c6m';
+  var gFpc = 'WT_FPC';
+
+
+
+  if (document.cookie.indexOf(gFpc + "=") == -1) {
+    var wtidJs = document.createElement("script");
+    wtidJs.src = "//" + gDomain + "/" + gDcsId + "/wtid.js";
+    document.getElementsByTagName("head")[0].appendChild(wtidJs);
+  }
+
+
+
+  var detectedLocale = 'en-us';
+  var wtsp = 'msdnlib_hp';
+  var gTrackEvents = '0';
+/**/
+} finally { MTPS._injectNextScript_2 && MTPS._injectNextScript_2(); }</script><script class="mtps-injected">try {
+/**/
+  var omni_guid = "bc098ab2-ea1b-4901-a4a6-16faf7a0c2c9";
+/**/
+} finally { MTPS._injectNextScript_3 && MTPS._injectNextScript_3(); }</script><script class="mtps-injected">try {
+//
+
+            window.appInsightsId = '60854590-027a-4ae4-98be-2741a40f355f';
+            //
+} finally { MTPS._injectNextScript_4 && MTPS._injectNextScript_4(); }</script><script class="mtps-injected" src="./Parsing REST Services JSON Responses (C#)_files/Combined.js"></script><script class="mtps-injected" src="./Parsing REST Services JSON Responses (C#)_files/SearchBox.jss"></script><script class="mtps-injected" src="./Parsing REST Services JSON Responses (C#)_files/Combined(1).js"></script><script src="./Parsing REST Services JSON Responses (C#)_files/broker.js"></script><script class="mtps-injected">try {
+$(document).ready(function() {
+        try {
+            var token = $("#globalRequestVerification input[name='__RequestVerificationToken']").clone();
+            $("#siteFeedbackForm").append(token);
+        } catch(err) {
+            
+        }
+    });
+} finally { MTPS._injectNextScript_8 && MTPS._injectNextScript_8(); }</script><link href="./Parsing REST Services JSON Responses (C#)_files/PrintView.css" rel="stylesheet" type="text/css" media="print"></head>
+    <body class="library Chrome">
+        <div id="page">
+            
+
+            
+            
+            
+    
+
+    
+    <link type="text/css" rel="stylesheet">
+    
+    <input type="hidden" id="isHeaderBleeding" value="true">
+    <div id="ux-header" dir="ltr" class="ltr msdn">
+        
+
+        <header>
+            <span id="moveDrawer"></span>
+            <span id="singleCol"></span>
+            <span id="doubleCol"></span>
+
+            <div class="row">
+                <div class="top">
+                    <div class="left">
+                        
+                            <a class="msdnLogoImg" href="https://msdn.microsoft.com/en-us">
+                                <img src="./Parsing REST Services JSON Responses (C#)_files/microsoftLogoForHeader.png">
+                            </a>
+                    </div>
+
+                    <div class="right">
+                        <div id="signIn">
+
+<a class="scarabLink" href="https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=12&ct=1426637095&rver=6.0.5276.0&wp=MCMBI&wlcxt=MSDN%24MSDN%24MSDN&wreply=https%3a%2f%2fmsdn.microsoft.com%2fen-us%2flibrary%2fhh674188.aspx&lc=1033&id=254354&mkt=en-US" title="Sign in">Sign in</a></div>
+
+    
+
+                        <div class="auxNav">
+                            <div data-fragmentname="Subscriptions" id="Fragment_Subscriptions" xmlns="http://www.w3.org/1999/xhtml">
+  <a href="https://msdn.microsoft.com/subscriptions/manage/hh442900" id="Subscriptions_2153_1" xmlns="http://www.w3.org/1999/xhtml">MSDN subscriptions</a>
+</div>
+                            <div data-fragmentname="GetTools" id="Fragment_GetTools" xmlns="http://www.w3.org/1999/xhtml">
+  <a href="http://go.microsoft.com/fwlink/?LinkId=309297&clcid=0x409&slcid=0x409&campaign=o~msft~msdn~gettools-header~dn308572" id="GetTools_2153_3" xmlns="http://www.w3.org/1999/xhtml">Get tools</a>
+</div>
+                            <div data-fragmentname="SocialLinks" id="Fragment_SocialLinks" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <ul class="links horizontal">
+      <li>
+        <a href="http://www.facebook.com/microsoftdeveloper" target="_blank" id="SocialLinks_2152_4" class="facebook" xmlns="http://www.w3.org/1999/xhtml">http://www.facebook.com/microsoftdeveloper</a>
+      </li>
+      <li>
+        <a href="https://twitter.com/msdev" target="_blank" id="SocialLinks_2152_5" class="twitter" xmlns="http://www.w3.org/1999/xhtml">https://twitter.com/msdev</a>
+      </li>
+      <li>
+        <a href="http://plus.google.com/111221966647232053570/" target="_blank" id="SocialLinks_2152_6" class="googlePlus" xmlns="http://www.w3.org/1999/xhtml">http://plus.google.com/111221966647232053570/</a>
+      </li>
+    </ul>
+  </div>
+</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bottom">
+                    <div class="left">
+                        <div data-fragmentname="SiteLogo" id="Fragment_SiteLogo" xmlns="http://www.w3.org/1999/xhtml">
+  <div class="LinkWithImage topImage">
+    <a id="SiteLogo_2152_1" href="https://msdn.microsoft.com/">
+      <img id="msdnLogo-black" src="./Parsing REST Services JSON Responses (C#)_files/dn610975.msdnLogo-black.jpg" xmlns="">
+      <span></span>
+    </a>
+  </div>
+</div>
+                        <div id="drawer">
+                            <div class="toc">
+                                
+        <nav>
+            <ul class="navL1">
+                        <li class="inactive toggle">
+                            <a href="javascript:void(0)" title="Technologies">Technologies</a>
+                                <ul class="navL2" style="display: none;">
+                                        <li class="inactive">
+                                            <a href="https://msdn.microsoft.com/cloud-app-development-msdn" title="Cloud">Cloud</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="https://msdn.microsoft.com/mobile-app-development-msdn" title="Mobile">Mobile</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="https://msdn.microsoft.com/web-app-development-msdn" title="Web">Web</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="https://msdn.microsoft.com/business-and-productivity-app-development-msdn" title="Business">Business</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="https://msdn.microsoft.com/big-data-development-msdn" title="Data">Data</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="https://msdn.microsoft.com/games-development-msdn" title="Gaming">Gaming</a>
+
+                                                   
+                                        </li>
+                                </ul>
+                        </li>
+                        <li class="inactive toggle">
+                            <a href="javascript:void(0)" title="Downloads">Downloads</a>
+                                <ul class="navL2" style="display: none;">
+                                        <li class="inactive">
+                                            <a href="https://www.visualstudio.com/downloads/download-visual-studio-vs" title="Visual Studio">Visual Studio</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="https://msdn.microsoft.com/subscriptions" title="MSDN subscriptions">MSDN subscriptions</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="https://msdn.microsoft.com/microsoft-sdks-msdn" title="SDKs">SDKs</a>
+
+                                                   
+                                        </li>
+                                </ul>
+                        </li>
+                        <li class="inactive toggle">
+                            <a href="javascript:void(0)" title="Programs">Programs</a>
+                                <ul class="navL2" style="display: none;">
+                                        <li class="inactive">
+                                            <a href="https://www.microsoft.com/bizspark" title="BizSpark">BizSpark</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive toggle">
+                                            <a href="javascript:void(0)" title="Students">Students</a>
+
+                                                <ul class="navL3" style="display: none;">
+                                                        <li class="inactive">
+                                                            <a href="https://msdn.microsoft.com/student-developer-program" title="Develop apps">Develop apps</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="http://blogs.msdn.com/b/microsoft_student_developer_blog" title="Blog">Blog</a>
+                                                        </li>
+                                                </ul>
+                                                   
+                                        </li>
+                                        <li class="inactive toggle">
+                                            <a href="javascript:void(0)" title="Architects">Architects</a>
+
+                                                <ul class="navL3" style="display: none;">
+                                                        <li class="inactive">
+                                                            <a href="https://msdn.microsoft.com/architects-overview-msdn" title="Overview">Overview</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://msdn.microsoft.com/architects-case-studies-msdn" title="Case studies">Case studies</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://msdn.microsoft.com/architects-blueprints-msdn" title="Blueprints">Blueprints</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="http://blogs.msdn.com/b/msarchitecture/" title="Blog">Blog</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="http://social.msdn.microsoft.com/forums/en-us/home?brandignore=true&sort=relevancedesc&searchterm=architecture+or+architect" title="Forums">Forums</a>
+                                                        </li>
+                                                </ul>
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="http://events.msdn.microsoft.com/" title="Events">Events</a>
+
+                                                   
+                                        </li>
+                                </ul>
+                        </li>
+                        <li class="inactive toggle">
+                            <a href="javascript:void(0)" title="Community">Community</a>
+                                <ul class="navL2" style="display: none;">
+                                        <li class="inactive">
+                                            <a href="https://social.msdn.microsoft.com/forums/" title="Forums">Forums</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="http://blogs.msdn.com/b/developer-tools/" title="Blogs">Blogs</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="http://tech-advisors.msdn.microsoft.com/en-us" title="Tech Advisors">Tech Advisors</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="http://channel9.msdn.com/" title="Channel 9">Channel 9</a>
+
+                                                   
+                                        </li>
+                                </ul>
+                        </li>
+                        <li class="inactive current toggle">
+                            <a href="javascript:void(0)" title="Documentation">Documentation</a>
+                                <ul class="navL2" style="display: none;">
+                                        <li class="inactive current">
+                                            <a href="https://msdn.microsoft.com/library" title="APIs and reference">APIs and reference</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="https://msdn.microsoft.com/developer-centers-msdn" title="Dev centers">Dev centers</a>
+
+                                                   
+                                        </li>
+                                </ul>
+                        </li>
+                        <li class="inactive">
+                            <a href="https://code.msdn.microsoft.com/" title="Samples">Samples</a>
+                        </li>
+            </ul>
+        </nav>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="right">
+                        <div data-fragmentname="SearchBox" id="Fragment_SearchBox" xmlns="http://www.w3.org/1999/xhtml">
+  <div class="SearchBox">
+    <form id="HeaderSearchForm" name="HeaderSearchForm" method="get" onsubmit="return Epx.Controls.SearchBox.searchBoxOnSubmit(this);">
+      <input id="HeaderSearchTextBox" name="query" type="text" maxlength="200" onfocus="Epx.Controls.SearchBox.watermarkFocus(event, this.title)" onblur="Epx.Controls.SearchBox.watermarkBlur(event, this.title)" autocomplete="off">
+      <button id="HeaderSearchButton" value="" type="submit" class="header-search-button" title="Search MSDN"></button>
+    <div id="SearchFlyoutContainer" style="display: none; text-align: left; border: 1px solid buttonshadow; position: absolute; z-index: 1000; padding: 2px; color: rgb(59, 59, 59); font-family: Arial; font-size: 13.3333330154419px; background-color: rgb(255, 255, 255);"><div id="SuggestionContainer"><ul style="list-style: none; padding: 4px 2px 0px 1px; cursor: pointer; margin: 1px; white-space: nowrap;"></ul></div></div></form>
+    
+    
+  </div>
+</div>
+                        <a id="grip" href="javascript:void(0)"></a>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    
+    
+
+        
+    <div class="printExportMenus ltr">
+        <a id="isd_printABook" href="https://msdn.microsoft.com/en-us/library/export/help/?returnUrl=%2fen-us%2flibrary%2fhh674188.aspx" style="display: inline;">
+            Export (<span class="count">0</span>)
+        </a>
+        <a id="isd_print" href="https://msdn.microsoft.com/en-us/library/hh674188(d=printer).aspx" rel="nofollow">
+            Print 
+        </a>
+    </div>
+    
+
+        <div class="printExportMenus ltr">
+        <a id="expandCollapseAll" accesskey="e" href="javascript:void(0)" title="Expand/Collapse all sections by pressing Ctrl + Shift + e" style="display: none;">Expand All</a>
+    </div>
+
+    
+
+
+            <div id="body">
+                
+
+
+
+
+
+
+
+
+    <div id="leftNav" style="width: 280px; max-width: 480px; min-height: 10007px; height: 552px;">
+
+
+
+<div id="tocnav" style="width: 280px; position: fixed; top: 60px;">
+
+            <div class="toclevel0" data-toclevel="0" style="padding-left: 0px;">
+<a class="toc_collapsed" href="https://msdn.microsoft.com/en-us/library/hh674188.aspx#"></a><a data-tochassubtree="true" href="https://msdn.microsoft.com/en-us/library/ms123401.aspx" id="ms310241_MSDN.10_en-us" mtpsaliasid="" mtpsassetid="5DDC0A78-6B2C-43E3-9C56-55F45C0DFFA5_MSDN.10_en-us" mtpsshortid="ms123401_MSDN.10_en-us" title="MSDN Library">MSDN Library</a>            </div>
+            <div class="toclevel0" data-toclevel="0" style="padding-left: 0px;">
+<a class="toc_collapsed" href="https://msdn.microsoft.com/en-us/library/hh674188.aspx#"></a><a data-tochassubtree="true" href="https://msdn.microsoft.com/en-us/library/ee702802.aspx" id="ee702802_MSDN.10_en-us" mtpsaliasid="" mtpsassetid="MSDN|MSDNOnlineServices|$\msdnonlineservices.hxt@0,0_MSDN.10_en-us" mtpsshortid="ee702802_MSDN.10_en-us" title="Online Services">Online Services</a>            </div>
+            <div class="toclevel0" data-toclevel="0" style="padding-left: 0px;">
+<a class="toc_collapsed" href="https://msdn.microsoft.com/en-us/library/hh674188.aspx#"></a><a data-tochassubtree="true" href="https://msdn.microsoft.com/en-us/library/dd877956.aspx" id="dd877967_MSDN.10_en-us" mtpsaliasid="" mtpsassetid="7dd803e1-322f-489c-904e-bb4d69bdbd02_MSDN.10_en-us" mtpsshortid="dd877956_MSDN.10_en-us" title="Bing">Bing</a>            </div>
+            <div class="toclevel0" data-toclevel="0" style="padding-left: 0px;">
+<a class="toc_collapsed" href="https://msdn.microsoft.com/en-us/library/hh674188.aspx#"></a><a data-tochassubtree="true" href="https://msdn.microsoft.com/en-us/library/dd877180.aspx" id="jj572824_MSDN.10_en-us" mtpsaliasid="" mtpsassetid="07b4a071-29d1-48b3-a272-0651edd48289_MSDN.10_en-us" mtpsshortid="dd877180_MSDN.10_en-us" title="Maps">Maps</a>            </div>
+            <div class="toclevel1" data-toclevel="1" data-childrenloaded="true" style="padding-left: 17px;">
+<a class="toc_expanded" href="https://msdn.microsoft.com/en-us/library/hh674188.aspx#"></a><a data-tochassubtree="true" href="https://msdn.microsoft.com/en-us/library/bb545001.aspx" id="bb259696_MSDN.10_en-us" mtpsaliasid="" mtpsassetid="3851195d-fece-4fdd-8e1a-92efe5e9433f_MSDN.10_en-us" mtpsshortid="bb545001_MSDN.10_en-us" title="Bing Maps Articles">Bing Maps Articles</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<span class="toc_empty"></span><a href="https://msdn.microsoft.com/en-us/library/bb259689.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Bing Maps Tile System">Bing Maps Tile System</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<span class="toc_empty"></span><a href="https://msdn.microsoft.com/en-us/library/aa940990.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Understanding Scale and Resolution">Understanding Scale and Resolution</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<span class="toc_empty"></span><a href="https://msdn.microsoft.com/en-us/library/dn135313.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="SSL Certificate Validation for Java Applications">SSL Certificate Validation for Java Applications</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<span class="toc_empty"></span><a href="https://msdn.microsoft.com/en-us/library/dn384099.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Geocoding Japanese Addresses">Geocoding Japanese Addresses</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<span class="toc_empty"></span><a href="https://msdn.microsoft.com/en-us/library/dn217138.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Create a Custom Map URL">Create a Custom Map URL</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<span class="toc_empty"></span><a href="https://msdn.microsoft.com/en-us/library/hh305205.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Show Spatial Data Search Results on a Map">Show Spatial Data Search Results on a Map</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<span class="toc_empty"></span><a href="https://msdn.microsoft.com/en-us/library/hh779734.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Searching for Traffic Incidents Along a Route">Searching for Traffic Incidents Along a Route</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<span class="toc_empty"></span><a href="https://msdn.microsoft.com/en-us/library/hh534080.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Parsing REST Services XML Responses (C#)">Parsing REST Services XML Responses (C#)</a>            </div>
+            <div class="toclevel2 current" data-toclevel="2" style="padding-left: 34px;">
+<span class="toc_empty"></span><a href="./Parsing REST Services JSON Responses (C#)_files/Parsing REST Services JSON Responses (C#).html" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Parsing REST Services JSON Responses (C#)">Parsing REST Services JSON Responses (C#)</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<span class="toc_empty"></span><a href="https://msdn.microsoft.com/en-us/library/ff817004.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Accessing the Bing Maps REST Services using PHP">Accessing the Bing Maps REST Services using PHP</a>            </div>
+            <div class="toclevel2" data-toclevel="2" style="padding-left: 34px;">
+<span class="toc_empty"></span><a href="https://msdn.microsoft.com/en-us/library/ff817006.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Accessing the Bing Spatial Data Services using PHP">Accessing the Bing Spatial Data Services using PHP</a>            </div>
+</div>
+        
+
+        
+
+        
+        
+        <div id="toc-resizable-ew" class="toc-resizable-ew"></div>
+        
+
+<a id="NavigationResize" href="javascript:void(0)" style="left: 280px; display: inline-block;">
+    <img class="cl_nav_resize_open" src="./Parsing REST Services JSON Responses (C#)_files/ImageSprite.png" title="Expand" alt="Expand">
+    <img class="cl_nav_resize_close" src="./Parsing REST Services JSON Responses (C#)_files/ImageSprite.png" title="Minimize" alt="Minimize" style="display: none;">
+</a>
+
+
+
+    </div>
+<div id="content" class="content" style="margin-left: 280px; width: auto;">
+
+
+
+
+
+
+
+        
+
+<div class="topic" xmlns="http://www.w3.org/1999/xhtml">
+  <h1 class="title">Parsing REST Services JSON Responses (C#)</h1>
+  
+  <div class="lw_vs">
+    <div id="curversion">
+      <strong>
+            Bing 
+        </strong>
+    </div>
+  </div>
+  <div style="clear:both;"></div>
+  
+  <div id="mainSection">
+    <div id="mainBody">
+      <p>This tutorial shows you how to parse a Bing Maps REST Services JSON request using C# and includes basic sample code. The process is described in three steps:</p>
+      <ul>
+        <li class="unordered">
+						Create the basic program<br><br></li>
+        <li class="unordered">
+						Create the data contract<br><br></li>
+        <li class="unordered">
+						Create the Request<br><br></li>
+        <li class="unordered">
+						Make the request<br><br></li>
+        <li class="unordered">
+						Process the response<br><br></li>
+      </ul>
+      <h2 class="heading">Create the basic program</h2>
+      <div id="sectionSection0" class="section">
+        <p>Start Visual Studio and create a C# .NET console application named RESTServicesJSONParserExample. Replace the default template with the following sample code, and insert  your Bing Maps Key in place of the placeholder <strong>insertYourBingMapsKey</strong>. If you do not have a Bing Maps Key, see <a href="https://msdn.microsoft.com/en-us/library/ff428642.aspx">Getting a Bing Maps Key</a>.</p>
+<div id="code-snippet-1" class="codeSnippetContainer" xmlns="">
+    <div class="codeSnippetContainerTabs">
+        
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard." href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_8a6bebab-4e8b-4018-82f3-fe3f47a0e7b0');">Copy</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_8a6bebab-4e8b-4018-82f3-fe3f47a0e7b0" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre>using System;
+using System.Net;
+using System.Runtime.Serialization.Json;
+
+namespace RESTServicesJSONParserExample
+
+{
+    class Program
+    {
+        static string BingMapsKey = "InsertYourBingMapsKeyHere"; 
+        static void Main(string[] args)
+        {           
+            try
+            {
+                 string locationsRequest = CreateRequest("New%20York"); 
+                Response locationsResponse = MakeRequest(locationsRequest);
+                ProcessResponse(locationsResponse);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.Read();
+            }
+
+        }
+}
+
+
+
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+</div>
+      <h2 class="heading">Create the REST Services request</h2>
+      <div id="sectionSection1" class="section">
+        <p>Insert the following method into your program. This method creates a simple location query for “New York”. This type of Bing Maps REST Services <a href="https://msdn.microsoft.com/en-us/library/ff701715.aspx">Locations API</a> request is described in <a href="https://msdn.microsoft.com/en-us/library/ff701711.aspx">Find a Location by Query</a>. </p>
+<div id="code-snippet-2" class="codeSnippetContainer" xmlns="">
+    <div class="codeSnippetContainerTabs">
+        
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard." href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_cef0ca49-ec2a-4bb9-9645-23b0699e803c');">Copy</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_cef0ca49-ec2a-4bb9-9645-23b0699e803c" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre>public static string CreateRequest(string queryString)
+{
+    string UrlRequest = "http://dev.virtualearth.net/REST/v1/Locations/" +
+                         queryString +
+                         "?output=xml" +
+                         " &amp;key=" + BingMapsKey;
+    return (UrlRequest);
+}
+
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+</div>
+      <h2 class="heading">Create the REST Services request</h2>
+      <div id="sectionSection2" class="section">
+        <p>Insert the following method into your program. This method creates a simple location query for “New York”. This type of Bing Maps REST Services <a href="https://msdn.microsoft.com/en-us/library/ff701715.aspx">Locations API</a> request is described in <a href="https://msdn.microsoft.com/en-us/library/ff701711.aspx">Find a Location by Query</a>. </p>
+<div id="code-snippet-3" class="codeSnippetContainer" xmlns="">
+    <div class="codeSnippetContainerTabs">
+        
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard." href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_2f3d40f9-009a-44b9-baa0-85b8d30bf33e');">Copy</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_2f3d40f9-009a-44b9-baa0-85b8d30bf33e" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre>public static string CreateRequest(string queryString)
+{
+    string UrlRequest = "http://dev.virtualearth.net/REST/v1/Locations/" +
+                         queryString +
+                         "?output=xml" +
+                         " &amp;key=" + BingMapsKey;
+    return (UrlRequest);
+}
+
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+</div>
+      <h2 class="heading">Make the request</h2>
+      <div id="sectionSection3" class="section">
+        <p>Insert the following code to make REST Services HTTP requests and return the response. </p>
+<div id="code-snippet-4" class="codeSnippetContainer" xmlns="">
+    <div class="codeSnippetContainerTabs">
+        
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard." href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_bed8f802-7bc7-489c-98aa-43cba1f4bf89');">Copy</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_bed8f802-7bc7-489c-98aa-43cba1f4bf89" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre>public static Response MakeRequest(string requestUrl)
+{
+    try
+    {
+        HttpWebRequest request = WebRequest.Create(requestUrl) as HttpWebRequest;
+        using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
+        {
+            if (response.StatusCode != HttpStatusCode.OK)
+                throw new Exception(String.Format(
+                "Server error (HTTP {0}: {1}).",
+                response.StatusCode,
+                response.StatusDescription));
+            DataContractJsonSerializer jsonSerializer = new DataContractJsonSerializer(typeof(Response));
+            object objResponse = jsonSerializer.ReadObject(response.GetResponseStream());
+            Response jsonResponse
+            = objResponse as Response;
+            return jsonResponse;
+        }
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine(e.Message);
+        return null;
+    }
+}
+
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+</div>
+      <h2 class="heading">Create the data contract</h2>
+      <div id="sectionSection4" class="section">
+        <p>Add a new C# class to your project and replace the template content with the data contract classes below. These data contracts describe location data that is returned in the JSON response when you make a Locations API geocode request. You can compare the class structure with the example response at the end of this article.  You can also create similar contracts for the JSON responses to other REST Services requests.   </p>
+<div id="code-snippet-5" class="codeSnippetContainer" xmlns="">
+    <div class="codeSnippetContainerTabs">
+        
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard." href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_579c3cef-cad0-4c21-bb4f-d3d0318c8ff1');">Copy</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_579c3cef-cad0-4c21-bb4f-d3d0318c8ff1" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre>using System.Runtime.Serialization;
+using System.Runtime.Serialization.Json;
+
+namespace RESTServicesJSONParserExample
+{
+    [DataContract]
+    public class Response
+    {
+        [DataMember(Name = "copyright")]
+        public string Copyright { get; set; }
+        [DataMember(Name = "brandLogoUri")]
+        public string BrandLogoUri { get; set; }
+        [DataMember(Name = "statusCode")]
+        public int StatusCode { get; set; }
+        [DataMember(Name = "statusDescription")]
+        public string StatusDescription { get; set; }
+        [DataMember(Name = "authenticationResultCode")]
+        public string AuthenticationResultCode { get; set; }
+        [DataMember(Name = "errorDetails")]
+        public string[] errorDetails { get; set; }
+        [DataMember(Name = "traceId")]
+        public string TraceId { get; set; }
+        [DataMember(Name = "resourceSets")]
+        public ResourceSet[] ResourceSets { get; set; }
+    }
+
+
+    [DataContract]
+    public class ResourceSet
+    {
+        [DataMember(Name = "estimatedTotal")]
+
+        public long EstimatedTotal { get; set; }
+        [DataMember(Name = "resources")]
+        public Location[] Resources { get; set; }
+    }
+
+    [DataContract]
+    public class Point
+    {
+        /// &lt;summary&gt;
+        /// Latitude,Longitude
+        /// &lt;/summary&gt;
+        [DataMember(Name = "coordinates")]
+        public double[] Coordinates { get; set; }
+    }
+
+
+    [DataContract]
+    public class BoundingBox
+    {
+        [DataMember(Name = "southLatitude")]
+        public double SouthLatitude { get; set; }
+        [DataMember(Name = "westLongitude")]
+        public double WestLongitude { get; set; }
+        [DataMember(Name = "northLatitude")]
+        public double NorthLatitude { get; set; }
+        [DataMember(Name = "eastLongitude")]
+        public double EastLongitude { get; set; }
+    }
+
+    [DataContract]
+    public class GeocodePoint: Point
+    {
+        [DataMember(Name = "calculationMethod")]
+        public string CalculationMethod { get; set; }
+        [DataMember(Name = "usageTypes")]
+        public string[] UsageTypes { get; set; }
+    }
+
+    [DataContract(Namespace = "http://schemas.microsoft.com/search/local/ws/rest/v1")]
+    public class Location
+    {
+        [DataMember(Name = "boundingBox")]
+        public BoundingBox BoundingBox { get; set; }
+        [DataMember(Name = "name")]
+        public string Name { get; set; }
+        [DataMember(Name = "point")]
+        public Point Point { get; set; }
+        [DataMember(Name = "entityType")]
+        public string EntityType { get; set; }
+        [DataMember(Name = "address")]
+        public Address Address { get; set; }
+        [DataMember(Name = "confidence")]
+        public string Confidence { get; set; }
+        [DataMember(Name = "geocodePoints")]
+        public GeocodePoint[] GeocodePoints { get; set; }
+        [DataMember(Name = "matchCodes")]
+        public string[] MatchCodes { get; set; }
+    }
+
+    [DataContract]
+    public class Address
+    {
+        [DataMember(Name = "addressLine")]
+        public string AddressLine { get; set; }
+        [DataMember(Name = "adminDistrict")]
+        public string AdminDistrict { get; set; }
+        [DataMember(Name = "adminDistrict2")]
+        public string AdminDistrict2 { get; set; }
+        [DataMember(Name = "countryRegion")]
+        public string CountryRegion { get; set; }
+        [DataMember(Name = "formattedAddress")]
+        public string FormattedAddress { get; set; }
+        [DataMember(Name = "locality")]
+        public string Locality { get; set; }
+        [DataMember(Name = "postalCode")]
+        public string PostalCode { get; set; }
+    }
+}
+
+
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+</div>
+      <h2 class="heading">Process the request</h2>
+      <div id="sectionSection5" class="section">
+        <p>Insert the following code in the original file. This code extracts data from the response using the data contract classes.  </p>
+<div id="code-snippet-6" class="codeSnippetContainer" xmlns="">
+    <div class="codeSnippetContainerTabs">
+        
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard." href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_edee701d-3814-47ec-aa03-d0167b877570');">Copy</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_edee701d-3814-47ec-aa03-d0167b877570" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre>static public void ProcessResponse(Response locationsResponse)
+{
+    int locNum = locationsResponse.ResourceSets[0].Resources.Length;
+
+    //Get formatted addresses
+    //Get all locations in the response and then extract the formatted address for each location
+    Console.WriteLine("Show all formatted addresses");
+    for (int i = 0; i &lt; locNum; i++)
+    {
+        Location location = (Location)locationsResponse.ResourceSets[0].Resources[i];
+        Console.WriteLine(location.Address.FormattedAddress);
+    }
+    Console.WriteLine();
+            
+    //Get the Geocode Points for each Location
+    for (int i = 0; i &lt; locNum; i++)
+    {
+        Location location = (Location)locationsResponse.ResourceSets[0].Resources[i];
+        Console.WriteLine("Geocode Points for "+location.Address.FormattedAddress);               
+        int geocodePointNum = location.GeocodePoints.Length;
+        for (int j = 0; j &lt; geocodePointNum; j++)
+        {
+            Console.WriteLine("    Point: "+location.GeocodePoints[j].Coordinates[0].ToString()+","+
+                                        location.GeocodePoints[j].Coordinates[1].ToString());
+            double test = location.GeocodePoints[j].Coordinates[1];
+            Console.Write("    Usage: ");              
+            for (int k = 0; k &lt; location.GeocodePoints[j].UsageTypes.Length; k++)
+            {                                                     
+                Console.Write(location.GeocodePoints[j].UsageTypes[k].ToString()+" ");
+            }
+            Console.WriteLine("\n\n");
+        }
+    }
+    Console.WriteLine();
+
+    //Get all locations that have a MatchCode=Good and Confidence=High
+    Console.WriteLine("Locations that have a Confidence=High");
+    for (int i = 0; i &lt; locNum; i++)
+    {
+        Location location = (Location)locationsResponse.ResourceSets[0].Resources[i];
+        if (location.Confidence == "High")
+            Console.WriteLine(location.Address.FormattedAddress);
+    }
+                Console.WriteLine();
+
+    Console.WriteLine("Press any key to exit");
+    Console.ReadKey();
+}
+
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+</div>
+      <h2 class="heading">Request and Response</h2>
+      <div id="sectionSection6" class="section">
+        <p>This sample code below creates the following request and extracts information from the response.</p>
+<div id="code-snippet-7" class="codeSnippetContainer" xmlns="">
+    <div class="codeSnippetContainerTabs">
+        
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard." href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_80ced59e-161e-46ba-8668-1a7b1fe948ad');">Copy</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_80ced59e-161e-46ba-8668-1a7b1fe948ad" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre>http://dev.virtualearth.net/REST/v1/Locations/New%20York?output=xml&amp;key=insertYourBingMapsKey
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+
+<div id="code-snippet-8" class="codeSnippetContainer" xmlns="">
+    <div class="codeSnippetContainerTabs">
+        
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard." href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_24c4f6ae-8e4f-4d03-aa61-118c015553d3');">Copy</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_24c4f6ae-8e4f-4d03-aa61-118c015553d3" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre>{
+   "authenticationResultCode":"ValidCredentials",
+   "brandLogoUri":"http:\/\/dev.virtualearth.net\/Branding\/logo_powered_by.png",
+   "copyright":"Copyright Â© 2011 Microsoft and its suppliers. All rights reserved. This API cannot be accessed and the content and any results may not be used, reproduced or transmitted in any manner without express written permission from Microsoft Corporation.",
+   "resourceSets":[
+      {
+         "estimatedTotal":3,
+         "resources":[
+            {
+               "__type":"Location:http:\/\/schemas.microsoft.com\/search\/local\/ws\/rest\/v1",
+               "bbox":[
+                  40.36376953125,
+                  -74.745925903320312,
+                  41.056510925292969,
+                  -73.267219543457031
+               ],
+               "name":"New York, NY",
+               "point":{
+                  "type":"Point",
+                  "coordinates":[
+                     40.714550018310547,
+                     -74.007118225097656
+                  ]
+               },
+               "address":{
+                  "adminDistrict":"NY",
+                  "countryRegion":"United States",
+                  "formattedAddress":"New York, NY",
+                  "locality":"New York"
+               },
+               "confidence":"High",
+               "entityType":"PopulatedPlace",
+               "geocodePoints":[
+                  {
+                     "type":"Point",
+                     "coordinates":[
+                        40.714550018310547,
+                        -74.007118225097656
+                     ],
+                     "calculationMethod":"Rooftop",
+                     "usageTypes":[
+                        "Display"
+                     ]
+                  }
+               ],
+               "matchCodes":[
+                  "Good"
+               ]
+            },
+            {
+               "__type":"Location:http:\/\/schemas.microsoft.com\/search\/local\/ws\/rest\/v1",
+               "bbox":[
+                  53.049841262515258,
+                  -0.204358685176537,
+                  53.107782028500367,
+                  -0.075841319401099713
+               ],
+               "name":"New York, Lincs, United Kingdom",
+               "point":{
+                  "type":"Point",
+                  "coordinates":[
+                     53.078811645507812,
+                     -0.14010000228881836
+                  ]
+               },
+               "address":{
+                  "adminDistrict":"England",
+                  "adminDistrict2":"Lincs",
+                  "countryRegion":"United Kingdom",
+                  "formattedAddress":"New York, Lincs, United Kingdom",
+                  "locality":"New York"
+               },
+               "confidence":"High",
+               "entityType":"PopulatedPlace",
+               "geocodePoints":[
+                  {
+                     "type":"Point",
+                     "coordinates":[
+                        53.078811645507812,
+                        -0.14010000228881836
+                     ],
+                     "calculationMethod":"Rooftop",
+                     "usageTypes":[
+                        "Display"
+                     ]
+                  }
+               ],
+               "matchCodes":[
+                  "Good"
+               ]
+            },
+            {
+               "__type":"Location:http:\/\/schemas.microsoft.com\/search\/local\/ws\/rest\/v1",
+               "bbox":[
+                  39.655889846499633,
+                  -93.968102868870432,
+                  39.713830612484742,
+                  -93.867758337184256
+               ],
+               "name":"New York, MO",
+               "point":{
+                  "type":"Point",
+                  "coordinates":[
+                     39.684860229492188,
+                     -93.917930603027344
+                  ]
+               },
+               "address":{
+                  "adminDistrict":"MO",
+                  "adminDistrict2":"Caldwell Co.",
+                  "countryRegion":"United States",
+                  "formattedAddress":"New York, MO",
+                  "locality":"New York"
+               },
+               "confidence":"High",
+               "entityType":"PopulatedPlace",
+               "geocodePoints":[
+                  {
+                     "type":"Point",
+                     "coordinates":[
+                        39.684860229492188,
+                        -93.917930603027344
+                     ],
+                     "calculationMethod":"Rooftop",
+                     "usageTypes":[
+                        "Display"
+                     ]
+                  }
+               ],
+               "matchCodes":[
+                  "Good"
+               ]
+            }
+         ]
+      }
+   ],
+   "statusCode":200,
+   "statusDescription":"OK",
+   "traceId":"4655cb7ebc1d4b0bb91ef3c047217bbd"
+}
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+</div>
+      <h2 class="heading">Complete Sample Code</h2>
+      <div id="sectionSection7" class="section">
+        <p>The following is the complete sample C# code. You must insert your Bing Maps Key.</p>
+<div id="code-snippet-9" class="codeSnippetContainer" xmlns="">
+    <div class="codeSnippetContainerTabs">
+        
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard." href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_627f08c5-edbf-49a0-b126-27f5d9ff5b81');">Copy</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_627f08c5-edbf-49a0-b126-27f5d9ff5b81" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre>using System;
+using System.Net;
+using System.Runtime.Serialization.Json;
+
+namespace RESTServicesJSONParserExample
+
+{
+    class Program
+    {
+        static string BingMapsKey = "insertYourBingMapsKey"; 
+        static void Main(string[] args)
+        {           
+            try
+            {
+                 string locationsRequest = CreateRequest("New%20York"); 
+                Response locationsResponse = MakeRequest(locationsRequest);
+                ProcessResponse(locationsResponse);
+  }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.Read();
+            }
+
+        }
+
+        //Create the request URL
+        public static string CreateRequest(string queryString)
+        {
+            string UrlRequest = "http://dev.virtualearth.net/REST/v1/Locations/" +
+                                           queryString +
+                                           "?key=" + BingMapsKey;
+            return (UrlRequest);
+        }
+
+        public static Response MakeRequest(string requestUrl)
+        {
+            try
+            {
+                HttpWebRequest request = WebRequest.Create(requestUrl) as HttpWebRequest;
+                using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
+                {
+                    if (response.StatusCode != HttpStatusCode.OK)
+                        throw new Exception(String.Format(
+                        "Server error (HTTP {0}: {1}).",
+                        response.StatusCode,
+                        response.StatusDescription));
+                    DataContractJsonSerializer jsonSerializer = new DataContractJsonSerializer(typeof(Response));
+                    object objResponse = jsonSerializer.ReadObject(response.GetResponseStream());
+                    Response jsonResponse
+                    = objResponse as Response;
+                    return jsonResponse;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
+
+        }
+
+        static public void ProcessResponse(Response locationsResponse)
+        {
+
+            int locNum = locationsResponse.ResourceSets[0].Resources.Length;
+
+            //Get formatted addresses: Option 1
+            //Get all locations in the response and then extract the formatted address for each location
+            Console.WriteLine("Show all formatted addresses");
+            for (int i = 0; i &lt; locNum; i++)
+            {
+                Location location = (Location)locationsResponse.ResourceSets[0].Resources[i];
+                Console.WriteLine(location.Address.FormattedAddress);
+            }
+            Console.WriteLine();
+            
+            //Get the Geocode Points for each Location
+            for (int i = 0; i &lt; locNum; i++)
+            {
+               Location location = (Location)locationsResponse.ResourceSets[0].Resources[i];
+               Console.WriteLine("Geocode Points for "+location.Address.FormattedAddress);               
+               int geocodePointNum = location.GeocodePoints.Length;
+               for (int j = 0; j &lt; geocodePointNum; j++)
+               {
+                   Console.WriteLine("    Point: "+location.GeocodePoints[j].Coordinates[0].ToString()+","+
+                                                location.GeocodePoints[j].Coordinates[1].ToString());
+                   double test = location.GeocodePoints[j].Coordinates[1];
+                   Console.Write("    Usage: ");              
+                   for (int k = 0; k &lt; location.GeocodePoints[j].UsageTypes.Length; k++)
+                   {                                                     
+                      Console.Write(location.GeocodePoints[j].UsageTypes[k].ToString()+" ");
+                   }
+                   Console.WriteLine("\n\n");
+               }
+            }
+            Console.WriteLine();
+
+
+            //Get all locations that have a MatchCode=Good and Confidence=High
+            Console.WriteLine("Locations that have a Confidence=High");
+            for (int i = 0; i &lt; locNum; i++)
+            {
+                Location location = (Location)locationsResponse.ResourceSets[0].Resources[i];
+                if (location.Confidence == "High")
+                    Console.WriteLine(location.Address.FormattedAddress);
+            }
+                        Console.WriteLine();
+
+            Console.WriteLine("Press any key to exit");
+            Console.ReadKey();
+
+
+        }
+    }
+}
+
+
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+</div>
+			
+		</div>
+    
+  </div>
+</div>
+
+
+    
+
+
+
+
+<div class="libraryMemberFilter">
+    <div class="filterContainer">
+        <span>Show:</span>
+        <label>
+            <input type="checkbox" class="libraryFilterInherited" checked="checked" value="Inherit">Inherited
+        </label>
+        <label>
+            <input type="checkbox" class="libraryFilterProtected" checked="checked" value="Protected">Protected
+        </label>
+    </div>
+</div>
+    
+<input type="hidden" id="libraryMemberFilterEmptyWarning" value="There are no members available with your current filter settings.">
+
+
+ 
+</div>
+
+
+            </div>
+            <div class="clear"></div>
+
+            
+    
+<input name="__RequestVerificationToken" type="hidden" value="poqXLNEqhwCidWAz_bnJ1AeFcsRFGz9zKZb_gmMu08RPGYkhpLEiZEuf5rBfnyNiYIl-YbpueI10XZ8yKri_u3XX9781">
+<input id="ratingSubmitUrl" type="hidden" value="https://msdn.microsoft.com/en-us/library/feedback/add/hh674188.aspx">
+<input id="isTopicRated" type="hidden" value="false">
+
+
+
+
+    
+
+    
+    <link type="text/css" rel="stylesheet">
+    
+    <div id="ux-footer" class="" style="" dir="ltr">
+            
+            <div id="footerSock" class="librarySock both">
+                <div id="footerSockInner">
+                        <a name="feedback"></a>
+
+<div class="rating">
+    <div id="ratingSection1">
+        <div class="title">
+            Was this page helpful?
+        </div>
+        <div class="description">
+            Your feedback about this content is important.<br>Let us know what you think.
+        </div>
+        <div class="buttons">
+            <button class="button" id="ratingYes">Yes</button>
+            <button class="button" id="ratingNo">No</button>
+        </div>
+        <input id="ratingValue" type="hidden" value="">
+    </div>
+    <div id="ratingSection2">
+        <div class="title">
+            Additional feedback?
+        </div>
+        <textarea id="ratingText" rows="6" cols="" maxlength="1500"></textarea>
+        <div class="counter right">
+            <span id="feedbackTextCounter">1500</span> characters remaining
+        </div>
+        <div class="buttons left">
+            <button class="button" id="ratingSubmit">Submit</button>
+            <button class="button" id="ratingSkipThis">Skip this</button>
+        </div>
+    </div>
+    <div id="ratingSection3">
+        <div class="title">
+            Thank you!
+        </div>
+        <div class="description">
+            We appreciate your feedback.
+        </div>
+    </div>
+    
+    
+    <div id="contentFeedbackQAContainer" style="display: none;"></div>
+</div>
+    
+                    <div class="userVoice">
+    <div class="title">
+        Have a suggestion to improve MSDN Library?
+    </div>
+        <div class="description">
+            Visit our UserVoice Page to submit and vote on ideas!
+        </div>
+    <div class="buttons">
+        <a class="button" id="userVoiceButton" href="http://feedback.msdn.com/forums/257782-msdn-feature-suggestions/category/83975" target="_blank">Make a suggestion</a>
+    </div>
+</div>  
+                    <div class="clear"></div>
+                </div>
+            </div>
+
+        <footer class="top">
+            <div data-fragmentname="LeftLinks" id="Fragment_LeftLinks" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <div class="linkListTitle">Dev centers</div>
+    <ul class="links">
+      <li>
+        <a href="https://dev.windows.com/" id="LeftLinks_2148_1" class="windowsBlue" xmlns="http://www.w3.org/1999/xhtml">Windows</a>
+      </li>
+      <li>
+        <a href="http://dev.office.com/" id="LeftLinks_2148_3" class="office" xmlns="http://www.w3.org/1999/xhtml">Office</a>
+      </li>
+      <li>
+        <a href="https://msdn.microsoft.com/vstudio" id="LeftLinks_2148_4" class="visualStudio" xmlns="http://www.w3.org/1999/xhtml">Visual Studio</a>
+      </li>
+      <li>
+        <a href="http://developer.nokia.com/" title="Nokia" id="LeftLinks_2148_15" class="nokia" xmlns="http://www.w3.org/1999/xhtml">Nokia</a>
+      </li>
+      <li>
+        <a href="http://azure.microsoft.com/en-us/documentation/" target="_blank" id="LeftLinks_2148_12" xmlns="http://www.w3.org/1999/xhtml">Microsoft Azure</a>
+      </li>
+      <li>
+        <a href="https://msdn.microsoft.com/aa937802" id="LeftLinks_2148_5" xmlns="http://www.w3.org/1999/xhtml">More...</a>
+      </li>
+    </ul>
+  </div>
+</div>    
+            <div id="rightLinks">
+                <div data-fragmentname="CenterLinks1" id="Fragment_CenterLinks1" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <div class="linkListTitle">Learning resources</div>
+    <ul class="links">
+      <li>
+        <a href="http://www.microsoftvirtualacademy.com/" id="CenterLinks1_2151_4" xmlns="http://www.w3.org/1999/xhtml">Microsoft Virtual Academy</a>
+      </li>
+      <li>
+        <a href="http://channel9.msdn.com/" id="CenterLinks1_2151_5" xmlns="http://www.w3.org/1999/xhtml">Channel 9</a>
+      </li>
+      <li>
+        <a href="http://www.interoperabilitybridges.com/" id="CenterLinks1_2151_6" xmlns="http://www.w3.org/1999/xhtml">Interoperability Bridges</a>
+      </li>
+      <li>
+        <a href="https://msdn.microsoft.com/magazine/" id="CenterLinks1_2151_7" xmlns="http://www.w3.org/1999/xhtml">MSDN Magazine</a>
+      </li>
+    </ul>
+  </div>
+</div>
+                <div data-fragmentname="CenterLinks2" id="Fragment_CenterLinks2" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <div class="linkListTitle">Community</div>
+    <ul class="links">
+      <li>
+        <a href="https://social.msdn.microsoft.com/forums/en-us/home" id="CenterLinks2_2151_8" xmlns="http://www.w3.org/1999/xhtml">Forums</a>
+      </li>
+      <li>
+        <a href="http://blogs.msdn.com/b/developer-tools/" id="CenterLinks2_2151_9" xmlns="http://www.w3.org/1999/xhtml">Blogs</a>
+      </li>
+      <li>
+        <a href="http://www.codeplex.com/" id="CenterLinks2_2151_10" xmlns="http://www.w3.org/1999/xhtml">Codeplex</a>
+      </li>
+    </ul>
+  </div>
+</div>
+                <div data-fragmentname="CenterLinks3" id="Fragment_CenterLinks3" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <div class="linkListTitle">Support</div>
+    <ul class="links">
+      <li>
+        <a href="https://msdn.microsoft.com/hh361695" id="CenterLinks3_2151_11" xmlns="http://www.w3.org/1999/xhtml">Self support</a>
+      </li>
+    </ul>
+  </div>
+</div>
+                <div data-fragmentname="CenterLinks4" id="Fragment_CenterLinks4" xmlns="http://www.w3.org/1999/xhtml" class="nth-child-4n">
+  
+  <div class="linkList">
+    <div class="linkListTitle">Programs</div>
+    <ul class="links">
+      <li>
+        <a href="https://www.microsoft.com/bizspark/" id="CenterLinks4_2151_13" xmlns="http://www.w3.org/1999/xhtml">BizSpark (for startups)</a>
+      </li>
+      <li>
+        <a href="https://www.dreamspark.com/" id="CenterLinks4_2151_14" xmlns="http://www.w3.org/1999/xhtml">DreamSpark</a>
+      </li>
+      <li>
+        <a href="http://www.imaginecup.com/" id="CenterLinks4_2151_17" xmlns="http://www.w3.org/1999/xhtml">Imagine Cup</a>
+      </li>
+    </ul>
+  </div>
+</div>                
+            </div>
+        </footer>
+    
+        <footer class="bottom">
+            <span class="localeContainer">
+                
+    <form class="selectLocale" id="selectLocaleForm" action="https://msdn.microsoft.com/en-us/selectlocale-dmc">
+        <input type="hidden" name="fromPage" value="https%3a%2f%2fmsdn.microsoft.com%2fen-us%2flibrary%2fhh674188.aspx">
+        <a href="https://msdn.microsoft.com/en-us/library/hh674188.aspx#" onclick="$(&#39;#selectLocaleForm&#39;).submit();return false;" title="Change your language">United States (English)</a>
+    </form>
+
+
+            </span>
+        
+            <div data-fragmentname="BottomLinks" id="Fragment_BottomLinks" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <ul class="links horizontal">
+      <li>
+        <a href="https://msdn.microsoft.com/newsletter.aspx" id="BottomLinks_2148_7" xmlns="http://www.w3.org/1999/xhtml">Newsletter</a>
+      </li>
+      <li>
+        <a href="https://msdn.microsoft.com/dn529288" id="BottomLinks_2148_8" xmlns="http://www.w3.org/1999/xhtml">Privacy &amp; cookies</a>
+      </li>
+      <li>
+        <a href="https://msdn.microsoft.com/cc300389" id="BottomLinks_2148_9" xmlns="http://www.w3.org/1999/xhtml">Terms of use</a>
+      </li>
+      <li>
+        <a href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" id="BottomLinks_2148_10" xmlns="http://www.w3.org/1999/xhtml">Trademarks</a>
+      </li>
+    </ul>
+  </div>
+</div>    
+            <span class="logoLegal">
+                <span class="logo"></span>
+                <span class="copyright">© 2015 Microsoft</span>
+            </span>
+        </footer>
+    </div>
+    
+
+
+            <div class="footerPrintView">
+                <div class="footerCopyrightPrintView">© 2015 Microsoft</div>
+            </div>
+
+            
+            
+    
+    
+    <input id="tocPaddingPerLevel" type="hidden" value="17">
+
+
+
+            <input id="MtpsDevice" type="hidden" value="Default">
+
+
+<!--[CDATA[ Third party scripts and code linked to or referenced from this website are licensed to you by the parties that own such code, not by Microsoft.  See ASP.NET Ajax CDN Terms of Use – http://www.asp.net/ajaxlibrary/CDN.ashx. ]]-->
+
+            
+            
+            
+            
+            
+
+
+
+
+
+
+<noscript>&lt;div&gt;&lt;img alt="DCSIMG" id="Img1" width="1" height="1" src="https://m.webtrends.com/dcsmgru7m99k7mqmgrhudo0k8_8c6m/njs.gif?dcsuri=/nojavascript&amp;amp;WT.js=No" /&gt;&lt;/div&gt;</noscript>
+
+
+
+
+
+
+
+
+
+<noscript>
+  &lt;a href="http://www.omniture.com" title="Web Analytics"&gt;
+    &lt;img src="//msstonojsmsdn.112.2o7.net/b/ss/msstonojsmsdn/1/H.20.2--NS/0" height="1" width="1" border="0" alt="" /&gt;
+  &lt;/a&gt;
+</noscript>
+            
+
+
+
+
+<div id="globalRequestVerification">
+    <input name="__RequestVerificationToken" type="hidden" value="45D0g3Kxe1Ql2iKWcwjQ0gICVuOaXY534q3EnSF__S7jOVxwrK_o8LNWAZYAS1QNyHL8YAgC8SgLLsT0NE1gsHbH4fU1">
+</div>
+
+
+        </div>
+
+        
+        
+        
+        
+    <script type="text/javascript" class="mtps-injected">
+/*<![CDATA[*/
+(function(window,document){"use strict";function preload(scripts){for(var result=[],script,e,i=0;i<scripts.length;i++)script=scripts[i],script.hasOwnProperty("url")&&(e=document.createElement("script"),e.src=script.url,script.throwaway=e),result.push(script);return result}function inject(scripts,index){var script,elem;if(index>=scripts.length){delete mtps.injectScripts;return}script=scripts[index];elem=document.createElement("script");elem.className="mtps-injected";elem.async=!1;var isLoaded=!1,timeoutId=0,injectNextFnName="",injectNext=elem.onerror=function(){isLoaded||(isLoaded=!0,inject(scripts,index+1),window.clearTimeout(timeoutId),elem.onload=elem.onerror=elem.onreadystatechange=null,injectNextFnName&&delete mtps[injectNextFnName],elem.removeEventListener&&elem.removeEventListener("load",injectNext,!1))};elem.addEventListener?elem.addEventListener("load",injectNext,!1):elem.readyState==="uninitialized"?elem.onreadystatechange=function(){(this.readyState==="loaded"||this.readyState==="complete")&&injectNext()}:elem.onload=injectNext;script.hasOwnProperty("url")?(timeoutId=window.setTimeout(injectNext,12e4),elem.src=script.url):(injectNextFnName="_injectNextScript_"+index,mtps[injectNextFnName]=injectNext,timeoutId=window.setTimeout(injectNext,2e3),elem.text="try {\n"+script.txt+"\n} finally { MTPS."+injectNextFnName+" && MTPS."+injectNextFnName+"(); }");parent.appendChild(elem)}var mtps=window.MTPS||(window.MTPS={}),parent=document.getElementsByTagName("head")[0];mtps.injectScripts=function(scripts){inject(preload(scripts),0)}})(window,document);
+MTPS.injectScripts([
+	{ txt: "/**/\r\n(window.MTPS || (window.MTPS = {})).cdnDomains || (window.MTPS.cdnDomains = { \r\n\t\"image\": \"https://i-msdn.sec.s-msft.com\", \r\n\t\"js\": \"https://i2-msdn.sec.s-msft.com\", \r\n\t\"css\": \"https://i-msdn.sec.s-msft.com\", \r\n\t\"xap\": \"https://i-vso.sec.s-msft.com\"\r\n});\r\n/**/" },
+	{ url: "https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js" },
+	{ txt: "//\n  var literalNormalizedUrl = \u0027/en-us/library/hh674188(l=en-us,v=msdn.10).aspx\u0027;\n  var wt_nvr_ru = \u0027WT_NVR_RU\u0027;\n  var wt_fpcdom = \u0027.microsoft.com\u0027;\n  var wt_domlist = \u0027msdn.microsoft.com\u0027;\n  var wt_pathlist = \u0027\u0027;\n  var wt_paramlist = \u0027DCSext.mtps_devcenter\u0027;\n  var wt_siteid = \u0027MSDN\u0027;\n  var gDomain = \u0027m.webtrends.com\u0027;\n  var gDcsId = \u0027dcsmgru7m99k7mqmgrhudo0k8_8c6m\u0027;\n  var gFpc = \u0027WT_FPC\u0027;\n\n\n\n  if (document.cookie.indexOf(gFpc + \"=\") == -1) {\n    var wtidJs = document.createElement(\"script\");\n    wtidJs.src = \"//\" + gDomain + \"/\" + gDcsId + \"/wtid.js\";\n    document.getElementsByTagName(\"head\")[0].appendChild(wtidJs);\n  }\n\n\n\n  var detectedLocale = \u0027en-us\u0027;\n  var wtsp = \u0027msdnlib_hp\u0027;\n  var gTrackEvents = \u00270\u0027;\n/**/" },
+	{ txt: "/**/\n  var omni_guid = \"bc098ab2-ea1b-4901-a4a6-16faf7a0c2c9\";\n/**/" },
+	{ txt: "//\n\n            window.appInsightsId = \u002760854590-027a-4ae4-98be-2741a40f355f\u0027;\n            //" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Combined.js?resources=0:Utilities,1:Layout,2:Header,1:Rating,2:Footer,0:Topic,3:webtrendsscript,4:omni_rsid_MSDN,5:WEDCS,0:AppInsightsPerf,6:Toc,1:SearchBox;/Areas/Epx/Content/Scripts:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Centers/Themes/StandardDevCenter/Content:2,/Areas/Global/Content/Webtrends/resources:3,/Areas/Global/Content/Omniture/resources/MSDN:4,/Areas/Library/Themes/Base/Content:5,/Areas/Library/Content:6\u0026amp;hashKey=FB961264348D584F46A0D35B285D2793\u0026amp;v=B824EC950EFE6A8B72B4760A16A865F4" },
+	{ url: "https://i1.services.social.microsoft.com/search/Widgets/SearchBox.jss?boxid=HeaderSearchTextBox\u0026btnid=HeaderSearchButton\u0026brand=Msdn\u0026loc=en-us\u0026focusOnInit=false\u0026emptyWatermark=true\u0026searchButtonTooltip=Search MSDN" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Combined.js?resources=0:PrintExportButton,1:NavigationResize,1:LibraryMemberFilter,2:Toc_Fixed,2:CodeSnippet,2:TopicNotInScope,2:CollapsibleArea,2:VersionSelector,2:SurveyBroker;/Areas/Library/Themes/Base/Content:0,/Areas/Library/Content:1,/Areas/Epx/Content/Scripts:2\u0026amp;hashKey=3248804C2DE1E642F8B20C4F83DBEA3B\u0026amp;v=B824EC950EFE6A8B72B4760A16A865F4" },
+	{ txt: "$(document).ready(function() {\n        try {\n            var token = $(\"#globalRequestVerification input[name=\u0027__RequestVerificationToken\u0027]\").clone();\n            $(\"#siteFeedbackForm\").append(token);\n        } catch(err) {\n            \n        }\n    });" }
+]);
+
+/*]]>*/
+</script>
+<script src="./Parsing REST Services JSON Responses (C#)_files/broker-config.js"></script></body></html>
