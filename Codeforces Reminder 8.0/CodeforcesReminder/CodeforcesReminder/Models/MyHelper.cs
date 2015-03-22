@@ -22,17 +22,26 @@ namespace CodeforcesReminder
         //Một lớp dùng để lấy Html về
         public static async Task<List<Contest>> GetListContestAsync(string url)
         {
-            WebRequest request = WebRequest.Create(url);
-            using (WebResponse response = await request.GetResponseAsync())
+            try
             {
-                using (Stream stream = response.GetResponseStream())
+                WebRequest request = WebRequest.Create(url);
+                using (WebResponse response = await request.GetResponseAsync())
                 {
-                    DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(ListContest));
-                    ListContest l = serializer.ReadObject(stream) as ListContest;
-                    List<Contest> list = l.result.Where(c => c.relativeTimeSeconds < 0).ToList();
-                    list.Sort(new XepTheoThoiGian());
-                    return list;
+                    using (Stream stream = response.GetResponseStream())
+                    {
+
+                        DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(ListContest));
+                        ListContest l = serializer.ReadObject(stream) as ListContest;
+                        List<Contest> list = l.result.Where(c => c.relativeTimeSeconds < 0).ToList();
+                        list.Sort(new XepTheoThoiGian());
+                        return list;
+                    }
                 }
+            }
+            catch (Exception)
+            {
+
+                return null;
             }
         }
 

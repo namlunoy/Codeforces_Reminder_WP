@@ -7,16 +7,16 @@
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
     <PackageIdentityName>82d743bc-1cc2-4ab7-af4a-d2a579996c63</PackageIdentityName>
-    <IntermediateOutputPath>E:\work\Projects x\CodeforcesReminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\obj\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>E:\work\Projects x\CodeforcesReminder\Codeforces Reminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\obj\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Bin\Debug\AppxManifest.xml">
+    <AppXManifest Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Bin\Debug\CodeforcesReminder.dll">
+    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Bin\Debug\CodeforcesReminder.dll">
       <PackagePath>CodeforcesReminder.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Expression\Blend\Windows Phone\v8.0\Libraries\Microsoft.Expression.Interactions.dll">
@@ -85,75 +85,78 @@
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Expression\Blend\Windows Phone\v8.0\Libraries\zh-Hant\System.Windows.Interactivity.resources.dll">
       <PackagePath>zh-Hant\System.Windows.Interactivity.resources.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Assets\AlignmentGrid.png">
+    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Assets\Fonts\consola.ttf">
+      <PackagePath>Assets\Fonts\consola.ttf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Assets\AlignmentGrid.png">
       <PackagePath>Assets\AlignmentGrid.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Assets\ApplicationIcon.png">
+    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Assets\ApplicationIcon.png">
       <PackagePath>Assets\ApplicationIcon.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Assets\BadgeLogo.png">
+    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Assets\BadgeLogo.png">
       <PackagePath>Assets\BadgeLogo.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Assets\Logo.png">
+    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Assets\Logo.png">
       <PackagePath>Assets\Logo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Assets\logo_banner.png">
+    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Assets\logo_banner.png">
       <PackagePath>Assets\logo_banner.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Assets\logo_normal.png">
+    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Assets\logo_normal.png">
       <PackagePath>Assets\logo_normal.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Assets\logo_small.png">
+    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Assets\logo_small.png">
       <PackagePath>Assets\logo_small.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Assets\SplashScreen.png">
+    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Assets\SplashScreen.png">
       <PackagePath>Assets\SplashScreen.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Assets\SquareTile150x150.png">
+    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Assets\SquareTile150x150.png">
       <PackagePath>Assets\SquareTile150x150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Assets\SquareTile71x71.png">
+    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Assets\SquareTile71x71.png">
       <PackagePath>Assets\SquareTile71x71.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Assets\WideLogo.png">
+    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Assets\WideLogo.png">
       <PackagePath>Assets\WideLogo.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Assets\Tiles\FlipCycleTileLarge.png">
+    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Assets\Tiles\FlipCycleTileLarge.png">
       <PackagePath>Assets\Tiles\FlipCycleTileLarge.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Assets\Tiles\FlipCycleTileMedium.png">
+    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Assets\Tiles\FlipCycleTileMedium.png">
       <PackagePath>Assets\Tiles\FlipCycleTileMedium.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Assets\Tiles\FlipCycleTileSmall.png">
+    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Assets\Tiles\FlipCycleTileSmall.png">
       <PackagePath>Assets\Tiles\FlipCycleTileSmall.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Assets\Tiles\IconicTileMediumLarge.png">
+    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Assets\Tiles\IconicTileMediumLarge.png">
       <PackagePath>Assets\Tiles\IconicTileMediumLarge.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Assets\Tiles\IconicTileSmall.png">
+    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Assets\Tiles\IconicTileSmall.png">
       <PackagePath>Assets\Tiles\IconicTileSmall.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\logo_banner - Copy.png">
+    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\logo_banner - Copy.png">
       <PackagePath>logo_banner - Copy.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\logo_banner.png">
+    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\logo_banner.png">
       <PackagePath>logo_banner.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\logo_normal.png">
+    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\logo_normal.png">
       <PackagePath>logo_normal.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\logo_small.png">
+    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\logo_small.png">
       <PackagePath>logo_small.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Bin\Debug\resources.pri">
+    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

@@ -3,6 +3,7 @@
   <XAPFiles>
     <File>resources.pri</File>
     <File>CodeforcesReminder.dll</File>
+    <File>Assets\Fonts\consola.ttf</File>
     <File>Assets\AlignmentGrid.png</File>
     <File>Assets\ApplicationIcon.png</File>
     <File>Assets\BadgeLogo.png</File>

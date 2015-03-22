@@ -32,10 +32,19 @@ namespace CodeforcesReminder
 
         async void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            if(NetworkInterface.GetIsNetworkAvailable()){
-            List<Contest> l = await MyHelper.GetListContestAsync("http://codeforces.com/api/contest.list?gym=false&d=" + DateTime.Now);
-            foreach (Contest c in l)
-                listBox.Items.Add(new ContestView(c));
+            if (NetworkInterface.GetIsNetworkAvailable())
+            {
+                List<Contest> l = await MyHelper.GetListContestAsync("http://codeforces.com/api/contest.list?gym=false&d=" + DateTime.Now);
+                if (l != null)
+                {
+                    foreach (Contest c in l)
+                        listBox.Items.Add(new ContestView(c));
+                }
+                else
+                {
+                    MessageBox.Show("Can't get contests right now! Please try again later!");
+                    Application.Current.Terminate();
+                }
             }
             else
             {
