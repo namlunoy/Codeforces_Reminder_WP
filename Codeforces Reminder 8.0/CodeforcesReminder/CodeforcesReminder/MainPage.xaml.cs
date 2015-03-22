@@ -12,6 +12,7 @@ using Microsoft.Phone.Scheduler;
 using CodeforcesReminder.Views;
 using System.Windows.Media.Animation;
 using Microsoft.Phone.Net.NetworkInformation;
+using Microsoft.Phone.Tasks;
 
 namespace CodeforcesReminder
 {
@@ -42,8 +43,13 @@ namespace CodeforcesReminder
                 }
                 else
                 {
-                    MessageBox.Show("Can't get contests right now! Please try again later!");
-                    Application.Current.Terminate();
+                    if (MessageBox.Show("Can't get contests right now! Navigate to the site!", "Error!", MessageBoxButton.OKCancel) == MessageBoxResult.OK)
+                    {
+                        WebBrowserTask t = new WebBrowserTask();
+                        t.Uri = new Uri("http://codeforces.com/contests");
+                        t.Show();
+                    }
+                    else Application.Current.Terminate();
                 }
             }
             else

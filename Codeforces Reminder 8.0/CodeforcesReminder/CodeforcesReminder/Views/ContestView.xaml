@@ -10,8 +10,8 @@
 
              HorizontalAlignment="Stretch"
              >
-    
-    <Grid x:Name="LayoutRoot" Background="Transparent" VerticalAlignment="Top" HorizontalAlignment="Stretch" >
+
+    <Grid x:Name="LayoutRoot" Width="480" Background="Transparent" VerticalAlignment="Top" HorizontalAlignment="Stretch" >
         <StackPanel  HorizontalAlignment="Stretch" VerticalAlignment="Top" >
             <TextBlock Name="txtName" FontSize="35" Foreground="Black" HorizontalAlignment="Stretch" VerticalAlignment="Top" TextAlignment="Center" Text="Zepto Code Rush 2015" />
             <TextBlock Name="txtTime" FontSize="23" Foreground="Black" HorizontalAlignment="Stretch" VerticalAlignment="Top" TextAlignment="Center" Text="11h30" />
