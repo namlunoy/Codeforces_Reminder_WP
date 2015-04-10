@@ -3,7 +3,6 @@
   <XAPFiles>
     <File>resources.pri</File>
     <File>CodeforcesReminder.dll</File>
-    <File>Assets\Fonts\consola.ttf</File>
     <File>Assets\AlignmentGrid.png</File>
     <File>Assets\ApplicationIcon.png</File>
     <File>Assets\BadgeLogo.png</File>
@@ -24,6 +23,7 @@
     <File>logo_banner - Copy.png</File>
     <File>logo_banner.png</File>
     <File>AppManifest.xaml</File>
+    <File>Assets\Fonts\consola.ttf</File>
     <File>Microsoft.Expression.Interactions.dll</File>
     <File>System.Windows.Interactivity.dll</File>
     <File>logo_normal.png</File>

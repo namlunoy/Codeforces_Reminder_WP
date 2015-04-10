@@ -102,7 +102,7 @@
             
 			</StackPanel>
 
-            <TextBlock Text="loading..." Name="txtLoad" Foreground="Black" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,90" FontSize="30" FontFamily="/Assets/Fonts/consola.ttf#Consola" />
+            <TextBlock Text="loading..." Name="txtLoad" Foreground="Black" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,90" FontSize="30" FontFamily="/CodeforcesReminder;component/Assets/Fonts/consola.ttf#Consolas" />
         </Grid>
 
 	</Grid>

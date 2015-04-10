@@ -85,9 +85,6 @@
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Expression\Blend\Windows Phone\v8.0\Libraries\zh-Hant\System.Windows.Interactivity.resources.dll">
       <PackagePath>zh-Hant\System.Windows.Interactivity.resources.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Assets\Fonts\consola.ttf">
-      <PackagePath>Assets\Fonts\consola.ttf</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="E:\work\Projects x\CodeforcesReminder\Codeforces Reminder\Codeforces Reminder 8.0\CodeforcesReminder\CodeforcesReminder\Assets\AlignmentGrid.png">
       <PackagePath>Assets\AlignmentGrid.png</PackagePath>
     </AppxPackagedFile>

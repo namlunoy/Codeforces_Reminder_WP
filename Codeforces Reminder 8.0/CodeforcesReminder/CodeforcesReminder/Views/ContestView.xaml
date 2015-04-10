@@ -4,20 +4,18 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    FontFamily="{StaticResource PhoneFontFamilyNormal}"
-    FontSize="{StaticResource PhoneFontSizeNormal}"
-    Foreground="{StaticResource PhoneForegroundBrush}"
+
 
              HorizontalAlignment="Stretch"
              >
 
     <Grid x:Name="LayoutRoot" Width="480" Background="Transparent" VerticalAlignment="Top" HorizontalAlignment="Stretch" >
         <StackPanel  HorizontalAlignment="Stretch" VerticalAlignment="Top" >
-            <TextBlock Name="txtName" FontSize="35" Foreground="Black" HorizontalAlignment="Stretch" VerticalAlignment="Top" TextAlignment="Center" Text="Zepto Code Rush 2015" />
-            <TextBlock Name="txtTime" FontSize="23" Foreground="Black" HorizontalAlignment="Stretch" VerticalAlignment="Top" TextAlignment="Center" Text="11h30" />
+            <TextBlock Name="txtName" FontSize="37" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Stretch" VerticalAlignment="Top"  TextAlignment="Center" Text="Zepto Code Rush 2015" TextWrapping="Wrap" />
+            <TextBlock Name="txtTime" FontSize="27" Foreground="Black" HorizontalAlignment="Stretch" VerticalAlignment="Top" TextAlignment="Center" Text="11h30" />
             <TextBlock Name="txtTimeBeforStart" Foreground="Black" HorizontalAlignment="Stretch" VerticalAlignment="Top" TextAlignment="Center" Text="time befor" />
             <TextBlock Name="txtTimeZone" Foreground="Black" HorizontalAlignment="Stretch" VerticalAlignment="Top" TextAlignment="Center" Text="(timezone)" />
-            <Grid>
+            <Grid HorizontalAlignment="Stretch">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
                     <ColumnDefinition />

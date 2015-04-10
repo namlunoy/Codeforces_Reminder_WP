@@ -23,7 +23,7 @@ namespace CodeforcesReminder.Views
             InitializeComponent();
             Loaded += ContestView_Loaded;
             timer.Interval = TimeSpan.FromSeconds(1);
-          
+          //  contest.BeforStart = new TimeSpan(0, 0, (int) (contest.BeforStart.TotalSeconds));
         }
 
         void timer_Tick(object sender, EventArgs e)

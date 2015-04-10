@@ -37,7 +37,7 @@ namespace CodeforcesReminder
                 StartTime = new DateTime(1970, 1, 1).AddSeconds((double)startTimeSeconds);
                 //Chuyểnt time từ utc về timezone hiện tại
                 StartTime = StartTime.Add(TimeZoneInfo.Local.BaseUtcOffset);
-                BeforStart = StartTime - DateTime.Now;
+                BeforStart = StartTime - new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
             }
         }
         public string NameReminder
@@ -56,13 +56,14 @@ namespace CodeforcesReminder
         {
             return ScheduledActionService.Find(NameReminder) != null;
         }
- 
+
         public void AddToReminder()
         {
             Reminder r = new Reminder(NameReminder);
             r.Title = name;
             r.Content = StartTime.ToString();
             r.BeginTime = StartTime.AddMinutes(-10);
+            //   r.BeginTime = DateTime.Now.AddSeconds(10);
             r.ExpirationTime = StartTime.AddMinutes(10);
             r.NavigationUri = new Uri("MainPage.xaml", UriKind.Relative);
             ScheduledActionService.Add(r);
